@@ -405,6 +405,11 @@ ifeq ($(OS_CLASS), Linux)
     $(PROD_NAME)_LIBS := mw100 $($(PROD_NAME)_LIBS)
   endif
 
+  ifdef MOTOR_ACSMOTION
+    $(DBD_NAME)_DBD += AcsMotionSupport.dbd
+    $(PROD_NAME)_LIBS := AcsMotion $($(PROD_NAME)_LIBS)
+  endif
+
   ifeq ($(TIRPC), YES)
     $(PROD_NAME)_SYS_LIBS += tirpc
   endif

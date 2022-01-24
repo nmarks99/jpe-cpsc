@@ -26,7 +26,7 @@
 ##############################################################################
 
 # Define the path to the synApps support directory and uncomment.
-SUPPORT=/corvette/home/epics/devel
+SUPPORT=/APSshare/epics/synApps_6_2_1/support
 
 # Specify the standard synApps configuration.
 -include $(SUPPORT)/configure/RELEASE
@@ -34,6 +34,8 @@ SUPPORT=/corvette/home/epics/devel
 # Include any non-standard support
 #TDS3000 = $(SUPPORT)/../nonSynAppsSupport/tds3000-2.4
 #FLY = $(SUPPORT)/../nonSynAppsSupport/fly-0-0
+
+#MOTOR_ACSMOTION=$(SUPPORT)/motorAcsMotion-R2-0
 
 # For a local, custom configuration; copy $(SUPPORT)/configure/RELEASE
 # to this directory as the file MASTER_RELEASE, edit the file, comment out
