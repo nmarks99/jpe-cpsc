@@ -13,7 +13,7 @@ cd ""
 #sysClkRateGet()
 
 ################################################################################
-cd topbin
+cd xxxbin
 
 # If the VxWorks kernel was built using the project facility, the following must
 # be added before any C++ code is loaded (see SPR #28980).
@@ -37,7 +37,7 @@ recDynLinkQsize = 1024
 ################################################################################
 # Tell EPICS all about the record types, device-support modules, drivers,
 # etc. in the software we just loaded (xxx.munch)
-dbLoadDatabase("$(TOP)/dbd/iocxxxVX.dbd")
+dbLoadDatabase("$(XXX)/dbd/iocxxxVX.dbd")
 iocxxxVX_registerRecordDeviceDriver(pdbbase)
 
 shellPromptSet "iocxxx> "
@@ -59,7 +59,8 @@ iocsh
 # devIocStats records specific to vxWorks
 dbLoadRecords("$(DEVIOCSTATS)/db/iocRTOS.db","IOCNAME=$(PREFIX)")
 # VxWorks support adds these additional PVs to be aliased
-dbLoadRecords("$(XXX)/xxxApp/Db/iocAdminVxWorks_aliases.db","P=$(PREFIX)")
+dbLoadRecords("$(XXX)/db/iocAdminSoft_aliases.db","P=$(PREFIX)")
+dbLoadRecords("$(XXX)/db/iocAdminVxWorks_aliases.db","P=$(PREFIX)")
 
 
 # If you have vxShell-specific commands to run, exit out of the ioc shell
